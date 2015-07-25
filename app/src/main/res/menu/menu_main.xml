@@ -1,7 +1,29 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="vienan.app.journey.activity.MainActivity">
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
-        android:orderInCategory="100" app:showAsAction="never" />
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/id_menu_map_common"
+        android:icon="@drawable/ic_launcher"
+        android:showAsAction="never"
+        android:title="普通地图"/>
+    <item
+        android:id="@+id/id_menu_map_site"
+        android:icon="@drawable/ic_launcher"
+        android:showAsAction="never"
+        android:title="卫星地图"/>
+    <item
+        android:id="@+id/id_menu_map_traffic"
+        android:icon="@drawable/ic_launcher"
+        android:showAsAction="never"
+        android:title="开启实时交通"/>
+    <item
+        android:id="@+id/id_menu_map_myLoc"
+        android:icon="@drawable/ic_launcher"
+        android:showAsAction="never"
+        android:title="我的位置"/>
+    <item
+        android:id="@+id/id_menu_map_style"
+        android:icon="@drawable/ic_launcher"
+        android:showAsAction="never"
+        android:title="地图模式【正常】"/>
+
 </menu>

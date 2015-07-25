@@ -1,10 +1,9 @@
 package vienan.app.journey.fragment;
 
-import android.app.Activity;
-import android.app.Fragment;
 import android.graphics.Bitmap;
-import android.net.Uri;
+import android.graphics.Canvas;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,18 +13,9 @@ import vienan.app.journey.R;
 import yalantis.com.sidemenu.interfaces.ScreenShotable;
 
 /**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link ContentFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link ContentFragment#newInstance} factory method to
- * create an instance of this fragment.
+ * Created by lenovo on 2015/7/22.
  */
-public class ContentFragment extends Fragment implements ScreenShotable{
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+public class ContentFragment extends Fragment implements ScreenShotable {
     public static final String CLOSE = "Close";
     public static final String BUILDING = "Building";
     public static final String BOOK = "Book";
@@ -36,23 +26,11 @@ public class ContentFragment extends Fragment implements ScreenShotable{
     public static final String MOVIE = "Movie";
 
     // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
     private View containerView;
     protected ImageView mImageView;
     protected int res;
     private Bitmap bitmap;
-    private OnFragmentInteractionListener mListener;
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ContentFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static ContentFragment newInstance(int resId) {
         ContentFragment fragment = new ContentFragment();
         Bundle bundle = new Bundle();
@@ -72,59 +50,41 @@ public class ContentFragment extends Fragment implements ScreenShotable{
     }
 
     @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        this.containerView=view.findViewById(R.id.container);
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_content, container, false);
-    }
-
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
-
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        try {
-            mListener = (OnFragmentInteractionListener) activity;
-        } catch (ClassCastException e) {
-            throw new ClassCastException(activity.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
+        View rootView=inflater.inflate(R.layout.fragment_main,container,false);
+        mImageView = (ImageView) rootView.findViewById(R.id.image_content);
+        mImageView.setClickable(true);
+        mImageView.setFocusable(true);
+        mImageView.setImageResource(res);
+        return rootView;
     }
 
     @Override
     public void takeScreenShot() {
+        Thread thread = new Thread() {
+            @Override
+            public void run() {
+                Bitmap bitmap = Bitmap.createBitmap(containerView.getWidth(),
+                        containerView.getHeight(), Bitmap.Config.ARGB_8888);
+                Canvas canvas = new Canvas(bitmap);
+                containerView.draw(canvas);
+                ContentFragment.this.bitmap = bitmap;
+            }
+        };
 
+        thread.start();
     }
 
     @Override
     public Bitmap getBitmap() {
-        return null;
+        return bitmap;
     }
-
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p/>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        public void onFragmentInteraction(Uri uri);
-    }
-
 }

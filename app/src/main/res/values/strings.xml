@@ -1,10 +1,13 @@
 <resources>
     <string name="app_name">Journey</string>
-    <string name="title_activity_main">MainActivity</string>
-
-    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_main">Journey</string>
+    <string name="content_description">contentDescription</string>
+    <string name="hello_world">正在定位...</string>
     <string name="action_settings">Settings</string>
-
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="request">重新定位</string>
+    <string name="request_poi">请求定位POI</string>
 </resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<io.codetail.widget.RevealFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <RelativeLayout
+        android:id="@+id/cp_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
+
+    <ImageView
+        android:id="@+id/compass_img"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/compass" />
+
+    <ImageView
+        android:id="@+id/arrow_img"
+        android:layout_width="60dp"
+        android:layout_height="110dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/arrow" />
+
+    </RelativeLayout>
+</io.codetail.widget.RevealFrameLayout>
