@@ -100,7 +100,6 @@
     <orderEntry type="library" exported="" name="fastjson" level="project" />
     <orderEntry type="library" exported="" name="greendao-1.3.7" level="project" />
     <orderEntry type="library" exported="" name="volley" level="project" />
-    <orderEntry type="library" exported="" name="BaiduNaviSDK_v1_0_0" level="project" />
     <orderEntry type="library" exported="" name="Android_Map_V2.5.0" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-22.0.0" level="project" />
     <orderEntry type="library" exported="" name="CircularReveal-1.0.4" level="project" />

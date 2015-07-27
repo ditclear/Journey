@@ -29,7 +29,9 @@ import io.codetail.animation.ViewAnimationUtils;
 import vienan.app.journey.R;
 import vienan.app.journey.fragment.CompassFragment;
 import vienan.app.journey.fragment.ContentFragment;
+import vienan.app.journey.fragment.GalleryFragment;
 import vienan.app.journey.fragment.MapFragment;
+import vienan.app.journey.fragment.SceneryFragment;
 import vienan.app.journey.fragment.WeatherFragment;
 import vienan.app.journey.util.SlideInAnimationHandler;
 import yalantis.com.sidemenu.interfaces.Resourceble;
@@ -70,6 +72,12 @@ public class MainActivity extends ActionBarActivity implements ViewAnimator.View
         setActionBar();
         createMenuList();
         viewAnimator = new ViewAnimator<SlideMenuItem>(this, list, contentFragment, drawerLayout, this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        setTitle("Journey");
     }
 
     @Override
@@ -226,6 +234,16 @@ public class MainActivity extends ActionBarActivity implements ViewAnimator.View
                 WeatherFragment weatherFragment=new WeatherFragment();
                 getSupportFragmentManager().beginTransaction().replace(R.id.content_frame,weatherFragment).commit();
                 return weatherFragment;
+            case ContentFragment.CASE:
+                startAnimator(position);
+                SceneryFragment sceneryFragment=new SceneryFragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.content_frame,sceneryFragment).commit();
+                return sceneryFragment;
+            case ContentFragment.SHOP:
+                startAnimator(position);
+                GalleryFragment galleryFragment=new GalleryFragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.content_frame,galleryFragment).commit();
+                return galleryFragment;
             default:
                 isMap=false;
         }

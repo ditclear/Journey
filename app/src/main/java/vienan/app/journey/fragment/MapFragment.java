@@ -118,7 +118,7 @@ public class MapFragment extends Fragment implements ScreenShotable {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         SDKInitializer.initialize(this.getActivity().getApplicationContext());
         getActivity().setTitle("Map");
-        View rootView=inflater.inflate(R.layout.basicmap_activity,container,false);
+        View rootView=inflater.inflate(R.layout.fragment_map,container,false);
         rootView.setBackgroundResource(R.drawable.bac1);
         mMapView= (MapView) rootView.findViewById(R.id.mapView);
         // 第一次定位

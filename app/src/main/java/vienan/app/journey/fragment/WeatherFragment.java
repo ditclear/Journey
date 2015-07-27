@@ -83,6 +83,7 @@ public class WeatherFragment extends Fragment implements ScreenShotable {
     public void onStop() {
         // TODO Auto-generated method stub
         super.onStop();
+        activity.setTitle("Journey");
         if (_isExe) {
             mDownload.cancel(true); // 取消操作
         }
@@ -174,9 +175,7 @@ public class WeatherFragment extends Fragment implements ScreenShotable {
         mWeather.setText(weather.getWeather() + "  " + weather.getWind());
         mDate.setText(weatherHandler.getDate());
         String date = weather.getDate();
-
-        mWeek.setText(date.substring(0, date.lastIndexOf("0"))
-                +date.substring(date.lastIndexOf("2"),date.lastIndexOf(")")));
+        mWeek.setText(date.substring(date.lastIndexOf("实"),date.length()));
         Log.e("date",date);
         mTemp.setText(weather.getTemperature());
         if (!_isExe) {

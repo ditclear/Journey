@@ -10,4 +10,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="request">重新定位</string>
     <string name="request_poi">请求定位POI</string>
+    <string name="capture">Capture</string>
+    <string name="border_top">Border Top</string>
+    <string name="border_bottom">Border Bottom</string>
+    <string name="image_url">Image Url</string>
 </resources>
