@@ -16,9 +16,8 @@ import android.widget.TextView;
 import java.io.File;
 
 import vienan.app.journey.R;
-import vienan.app.journey.fragment.SceneryFragment;
-import vienan.app.journey.util.ImageLoader;
-import vienan.app.journey.util.ZoomImageView;
+import vienan.app.journey.utils.ImageLoader;
+import vienan.app.journey.utils.ZoomImageView;
 
 /**
  * 查看大图的Activity界面。
@@ -79,6 +78,7 @@ public class ImageDetailsActivity extends Activity implements
 			zoomImageView.setImageBitmap(bitmap);
 			container.addView(view);
 			return view;
+			
 		}
 
 		@Override
@@ -109,7 +109,7 @@ public class ImageDetailsActivity extends Activity implements
 	private String getImagePath(String imageUrl) {
 		int lastSlashIndex = imageUrl.lastIndexOf("/");
 		String imageName = imageUrl.substring(lastSlashIndex + 1);
-		String imageDir = SceneryFragment.path;
+		String imageDir = ActivityCamera.path;
 		File file = new File(imageDir);
 		if (!file.exists()) {
 			file.mkdirs();

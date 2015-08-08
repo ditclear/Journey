@@ -33,12 +33,12 @@ import java.util.regex.Pattern;
 import javax.xml.parsers.SAXParserFactory;
 
 import vienan.app.journey.R;
-import vienan.app.journey.util.BDLocationClient;
-import vienan.app.journey.util.DrawPicNum;
-import vienan.app.journey.util.GlobalConstants;
-import vienan.app.journey.util.WeatherHandler;
-import vienan.app.journey.util.WeatherInfo;
-import vienan.app.journey.util.WeatherSource;
+import vienan.app.journey.utils.BDLocationClient;
+import vienan.app.journey.utils.DrawPicNum;
+import vienan.app.journey.utils.GlobalConstants;
+import vienan.app.journey.utils.WeatherHandler;
+import vienan.app.journey.utils.WeatherInfo;
+import vienan.app.journey.utils.WeatherSource;
 import yalantis.com.sidemenu.interfaces.ScreenShotable;
 
 /**

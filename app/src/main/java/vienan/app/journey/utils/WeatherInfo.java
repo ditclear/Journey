@@ -1,4 +1,4 @@
-package vienan.app.journey.util;
+package vienan.app.journey.utils;
 
 /**
  * 天气信息实体类

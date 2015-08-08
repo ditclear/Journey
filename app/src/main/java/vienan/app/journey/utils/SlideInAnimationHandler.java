@@ -1,4 +1,4 @@
-package vienan.app.journey.util;
+package vienan.app.journey.utils;
 
 import android.animation.Animator;
 import android.animation.ObjectAnimator;

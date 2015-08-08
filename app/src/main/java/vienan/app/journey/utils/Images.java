@@ -1,4 +1,4 @@
-package vienan.app.journey.util;
+package vienan.app.journey.utils;
 
 public class Images {
 	public final static String[] imageUrls = new String[]{

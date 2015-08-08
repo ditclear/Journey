@@ -1,4 +1,4 @@
-package vienan.app.journey.util;
+package vienan.app.journey.utils;
 
 import android.content.Context;
 import android.content.Intent;
@@ -18,21 +18,15 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 import vienan.app.journey.R;
+import vienan.app.journey.activity.ActivityCamera;
 import vienan.app.journey.activity.ImageDetailsActivity;
-import vienan.app.journey.fragment.SceneryFragment;
 
 /**
  * 自定义的ScrollView，在其中动态地对图片进行添加。
@@ -120,7 +114,7 @@ public class MyScrollView extends ScrollView implements OnTouchListener {
 	 * 记录所有界面上的图片，用以可以随时控制对图片的释放。
 	 */
 	private List<ImageView> imageViewList = new ArrayList<ImageView>();
-	private File currentDir = new File(SceneryFragment.path);
+	private File currentDir = new File(ActivityCamera.path);
 	private String[] imageUrls;
 	/**
 	 * 在Handler中进行图片可见性检查的判断，以及加载更多图片的操作。
@@ -178,7 +172,7 @@ public class MyScrollView extends ScrollView implements OnTouchListener {
 			File[] files=currentDir.listFiles();
 			imageUrls=new String[files.length];
 			for (int i=0;i<files.length;i++) {
-				imageUrls[i]=SceneryFragment.path+files[i].getName();
+				imageUrls[i]= ActivityCamera.path+files[i].getName();
 				Log.e("name",imageUrls[i]);
 			}
 			loadOnce = true;

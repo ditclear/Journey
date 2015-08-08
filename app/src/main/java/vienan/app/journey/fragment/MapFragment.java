@@ -27,7 +27,7 @@ import com.baidu.mapapi.model.LatLng;
 
 import vienan.app.journey.R;
 import vienan.app.journey.activity.MainActivity;
-import vienan.app.journey.util.MyOrientationListener;
+import vienan.app.journey.utils.MyOrientationListener;
 import yalantis.com.sidemenu.interfaces.ScreenShotable;
 
 /**

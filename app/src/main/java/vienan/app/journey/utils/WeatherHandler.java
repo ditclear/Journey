@@ -1,4 +1,4 @@
-package vienan.app.journey.util;
+package vienan.app.journey.utils;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;

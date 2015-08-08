@@ -1,5 +1,6 @@
 package vienan.app.journey.activity;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
@@ -31,9 +32,8 @@ import vienan.app.journey.fragment.CompassFragment;
 import vienan.app.journey.fragment.ContentFragment;
 import vienan.app.journey.fragment.GalleryFragment;
 import vienan.app.journey.fragment.MapFragment;
-import vienan.app.journey.fragment.SceneryFragment;
 import vienan.app.journey.fragment.WeatherFragment;
-import vienan.app.journey.util.SlideInAnimationHandler;
+import vienan.app.journey.utils.SlideInAnimationHandler;
 import yalantis.com.sidemenu.interfaces.Resourceble;
 import yalantis.com.sidemenu.interfaces.ScreenShotable;
 import yalantis.com.sidemenu.model.SlideMenuItem;
@@ -235,10 +235,8 @@ public class MainActivity extends ActionBarActivity implements ViewAnimator.View
                 getSupportFragmentManager().beginTransaction().replace(R.id.content_frame,weatherFragment).commit();
                 return weatherFragment;
             case ContentFragment.CASE:
-                startAnimator(position);
-                SceneryFragment sceneryFragment=new SceneryFragment();
-                getSupportFragmentManager().beginTransaction().replace(R.id.content_frame,sceneryFragment).commit();
-                return sceneryFragment;
+                startActivity(new Intent(this,ActivityCamera.class));
+                break;
             case ContentFragment.SHOP:
                 startAnimator(position);
                 GalleryFragment galleryFragment=new GalleryFragment();

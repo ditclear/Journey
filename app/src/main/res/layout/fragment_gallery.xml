@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_marginTop="@dimen/abc_action_bar_default_height_material"
     android:layout_height="match_parent">
-    <vienan.app.journey.util.MyScrollView
+    <vienan.app.journey.utils.MyScrollView
         android:id="@+id/my_scroll_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -41,5 +41,5 @@
             </LinearLayout>
         </LinearLayout>
 
-    </vienan.app.journey.util.MyScrollView>
+    </vienan.app.journey.utils.MyScrollView>
 </io.codetail.widget.RevealFrameLayout>
