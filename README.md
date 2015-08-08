@@ -9,11 +9,14 @@
 4. 从本地文件夹中取出并使用瀑布流的效果显示（感谢郭神，使用了lrucache来处理OOM）
 5. 有照片查看功能，单击单个照片可以进行查看，使用了viewpager进行滑动
 6. 图片可进行手势缩放
+7. 加入滤镜功能,使用[android-gpuimage](https://github.com/CyberAgent/android-gpuimage "GpuImage")对图像进行处理
 
 > TODO：
 > 
-> 1.准备加入滤镜功能,使用[android-gpuimage](https://github.com/CyberAgent/android-gpuimage "GpuImage")对图像进行处理
+> 1.使项目满足material design
 > 
 > 2.将百度地图换为高德地图
+>
+> 3.加上其他的viewpager切换效果
 
 欢迎各位进行参考，有用的话不妨star一下
