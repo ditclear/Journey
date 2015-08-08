@@ -175,8 +175,36 @@ public class WeatherFragment extends Fragment implements ScreenShotable {
         mWeather.setText(weather.getWeather() + "  " + weather.getWind());
         mDate.setText(weatherHandler.getDate());
         String date = weather.getDate();
-        mWeek.setText(date.substring(date.lastIndexOf("实"),date.length()));
-        Log.e("date",date);
+        mWeek.setText(date.substring(date.lastIndexOf("实"),date.length()-1));
+        Log.e("date", date);
+        Log.i("weather", weather.getWeather());
+        if(weather.getWeather().equals("阴")) {
+            weather_container.setBackgroundResource(R.drawable.yin);
+        }else if(weather.getWeather().equals("多云")) {
+            weather_container.setBackgroundResource(R.drawable.dy);
+        } else if(weather.getWeather().equals("晴")) {
+            weather_container.setBackgroundResource(R.drawable.q);
+        }else if(weather.getWeather().contains("小雪")) {
+            weather_container.setBackgroundResource(R.drawable.xx);
+        }else if(weather.getWeather().contains("雾")) {
+            weather_container.setBackgroundResource(R.drawable.w);
+        }else if(weather.getWeather().contains("小雨")) {
+            weather_container.setBackgroundResource(R.drawable.xyu);
+        }else if(weather.getWeather().contains("中雨")) {
+            weather_container.setBackgroundResource(R.drawable.zy);
+        }else if(weather.getWeather().contains("阵雨")) {
+            weather_container.setBackgroundResource(R.drawable.zheny);
+        }else if(weather.getWeather().contains("暴雨")) {
+            weather_container.setBackgroundResource(R.drawable.by);
+        }else if(weather.getWeather().contains("雷阵雨")) {
+            weather_container.setBackgroundResource(R.drawable.lzy);
+        }else if(weather.getWeather().contains("冰雹")) {
+            weather_container.setBackgroundResource(R.drawable.bb);
+        }else if(weather.getWeather().contains("沙尘暴")) {
+            weather_container.setBackgroundResource(R.drawable.scb);
+        } else {
+            weather_container.setBackgroundResource(R.drawable.bg);
+        }
         mTemp.setText(weather.getTemperature());
         if (!_isExe) {
             SimpleDateFormat sdf = new SimpleDateFormat("HH",
@@ -213,6 +241,7 @@ public class WeatherFragment extends Fragment implements ScreenShotable {
         text.setText(weather.getTemperature());
         text = (TextView) getView().findViewById(R.id.tv_weather3);
         text.setText(weather.getWeather());
+
     }
 
     /**
