@@ -12,8 +12,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.beardedhen.androidbootstrap.BootstrapCircleThumbnail;
+import com.beardedhen.androidbootstrap.FontAwesomeText;
 
 import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
@@ -48,13 +50,13 @@ public class WeatherFragment extends Fragment implements ScreenShotable {
     Activity activity;
     private View weather_container;
     private  Bitmap bitmap;
-    private TextView mText;
+    private FontAwesomeText mText;
     //private ImageView mIvTemp;
-    private TextView mWeather;
-    private TextView mDate;
-    private TextView mWeek;
-    private TextView mTemp;
-    private ImageView mIcon;
+    private FontAwesomeText mWeather;
+    private FontAwesomeText mDate;
+    private FontAwesomeText mWeek;
+    private FontAwesomeText mTemp;
+    private BootstrapCircleThumbnail mIcon;
     private Bitmap mBitmapIcon;
     private BDLocationClient mLocationClient;
     private WeatherSource mWeatherSource;
@@ -65,7 +67,6 @@ public class WeatherFragment extends Fragment implements ScreenShotable {
     private boolean _isExe = false;
 
     public WeatherFragment(){
-
     }
 
     @Override
@@ -115,13 +116,14 @@ public class WeatherFragment extends Fragment implements ScreenShotable {
         return rootView;
     }
     private void initWidgets(View rootView) {
-        mText = (TextView) rootView.findViewById(R.id.tv_text);
+        mText = (FontAwesomeText) rootView.findViewById(R.id.tv_text);
+        mText.startFlashing(getActivity(),false, FontAwesomeText.AnimationSpeed.MEDIUM);
         //mIvTemp = (ImageView) rootView.findViewById(R.id.iv_temp);
-        mWeather = (TextView) rootView.findViewById(R.id.tv_weather);
-        mDate = (TextView) rootView.findViewById(R.id.tv_date);
-        mWeek = (TextView) rootView.findViewById(R.id.tv_week);
-        mTemp = (TextView) rootView.findViewById(R.id.tv_temp);
-        mIcon = (ImageView) rootView.findViewById(R.id.iv_icon);
+        mWeather = (FontAwesomeText) rootView.findViewById(R.id.tv_weather);
+        mDate = (FontAwesomeText) rootView.findViewById(R.id.tv_date);
+        mWeek = (FontAwesomeText) rootView.findViewById(R.id.tv_week);
+        mTemp = (FontAwesomeText) rootView.findViewById(R.id.tv_temp);
+        mIcon = (BootstrapCircleThumbnail) rootView.findViewById(R.id.iv_icon);
         Button btn = (Button) rootView.findViewById(R.id.btn_request);
         //btn.setOnClickListener(this);
         weatherInfos = new ArrayList<WeatherInfo>();
@@ -297,7 +299,7 @@ public class WeatherFragment extends Fragment implements ScreenShotable {
         @Override
         protected void onPostExecute(Boolean result) {
             // TODO Auto-generated method stub
-            mIcon.setImageBitmap(mBitmapIcon);
+            mIcon.setImage(mBitmapIcon);
             System.out.println("-------------success--1");
             super.onPostExecute(result);
         }

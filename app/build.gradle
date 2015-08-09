@@ -55,4 +55,7 @@ dependencies {
     compile 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.2.3'
     compile files('libs/locSDK_4.1.jar')
     compile files('libs/need_lib.jar')
+    compile 'com.beardedhen:androidbootstrap:+'
+    compile 'com.github.chenupt.android:springindicator:1.0.2@aar'
+    compile 'com.liangfeizc:SlidePageIndicator:1.1.0@aar'
 }

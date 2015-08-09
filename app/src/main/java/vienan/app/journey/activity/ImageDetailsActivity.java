@@ -21,7 +21,7 @@ import vienan.app.journey.utils.ZoomImageView;
 
 /**
  * 查看大图的Activity界面。
- * 
+ *
  * @author guolin
  */
 public class ImageDetailsActivity extends Activity implements
@@ -58,7 +58,7 @@ public class ImageDetailsActivity extends Activity implements
 
 	/**
 	 * ViewPager的适配器
-	 * 
+	 *
 	 * @author guolin
 	 */
 	class ViewPagerAdapter extends PagerAdapter {
@@ -78,7 +78,7 @@ public class ImageDetailsActivity extends Activity implements
 			zoomImageView.setImageBitmap(bitmap);
 			container.addView(view);
 			return view;
-			
+
 		}
 
 		@Override
@@ -101,7 +101,7 @@ public class ImageDetailsActivity extends Activity implements
 
 	/**
 	 * 获取图片的本地存储路径。
-	 * 
+	 *
 	 * @param imageUrl
 	 *            图片的URL地址。
 	 * @return 图片的本地存储路径。
